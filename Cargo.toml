@@ -1,0 +1,20 @@
+[package]
+name = "shared-ptrs"
+version = "0.0.1"
+authors = ["Dillon Hicks <dillon@dillonhicks.io>"]
+edition = "2018"
+publish = false
+description = "common interface for Arc<Mutex<T>>, Rc<RefCell<T>>, and Arc<RwLock<T>>"
+
+
+[lib]
+doctest = false
+
+[dependencies]
+owning_ref = "~0.4"
+parking_lot = "~0.11"
+derive_more = "~0.99"
+serde = { version = "~1", features = ["derive"], optional = true}
+
+[features]
+default = ["serde"]
